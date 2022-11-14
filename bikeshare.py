@@ -137,6 +137,7 @@ def time_stats(data):
 
     """ Takes a filtered dataframe and prints time statistics """
 
+    # add column for hour number
     data['Hour'] = pd.DatetimeIndex(data['Start Time']).hour
 
     start_time = tm.time()
@@ -238,6 +239,7 @@ def show_data(data):
         # starting place for the data
         counter = 5
         start = 0
+        # show raw data five lines at a time
         while check == 'yes':
             print(data[start: counter])
             check = input('\nWant to see more?\n').lower().strip()
