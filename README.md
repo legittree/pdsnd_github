@@ -7,7 +7,6 @@ Project created 11-13-2022
 Bikeshare Data Analysis
 
 ### Description
-Describe what your project is about and what it does
 This interactive program sifts though Bikeshare data to give statistics
 filtered by time, as chosen by the user
 
