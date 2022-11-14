@@ -73,13 +73,11 @@ def get_filters():
         print('\nSorry, it looks like you did not select one of these cities, lets try again!')
         continue
     # Loop to ask whether or not to filter
-    while True:
-        time_filter_q = input(f'\nGreat! Lets look at {city.title()}! Would you like to filter the data by time?\nYes or No\n').lower().strip()
-        if time_filter_q in ['yes', 'no']:
-            break
-        else:
-            print('\nSlow down partner, you\'re not reading the prompt!')
-            continue
+    time_filter_q = input(f'\nGreat! Lets look at {city.title()}! Would you like to filter the data by time?\nYes or No\n').lower().strip()
+    while time_filter_q not in ['yes', 'no']:
+        time_filter_q = input('\nSlow down partner, you\'re not reading the prompt! Want to filter by time? yes or no\n').lower().strip()
+
+
     # Loop to get the specific filter
     while True:
         if time_filter_q == 'yes':
