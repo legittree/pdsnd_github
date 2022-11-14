@@ -79,29 +79,29 @@ def get_filters():
 
 
     # Loop to get the specific filter
-    while True:
-        if time_filter_q == 'yes':
-            while True:
-                month = input('\nAlright which month? January, February, March, April, May, June, or all?\n').lower().strip()
-                if month in ['january', 'february', 'march', 'april', 'may', 'june', 'all']:
-                    while True:
-                        day = input('\nAlright which day? Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday or all?\n').lower().strip()
-                        if day in ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'all']:
-                            print('\nOnward we go!')
-                            print('-'*80)
-                            return city, month, day
-                        else:
-                            print('\nWe can do this all day... (just don\'t press ctrl C)')
-                            continue
-                else:
-                    print('\nNow I can tell you\'re just stress testing.')
-                    continue
-        if time_filter_q == 'no':
-            month = None
-            day = None
-            print('\nOnward we go!')
-            print('-'*80)
-            return city, month, day
+    if time_filter_q == 'yes':
+        while True:
+            month = input('\nAlright which month? January, February, March, April, May, June, or all?\n').lower().strip()
+            if month in ['january', 'february', 'march', 'april', 'may', 'june', 'all']:
+                while True:
+                    day = input('\nAlright which day? Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday or all?\n').lower().strip()
+                    if day in ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'all']:
+                        print('\nOnward we go!')
+                        print('-'*80)
+                        return city, month, day
+                    else:
+                        print('\nWe can do this all day... (just don\'t press ctrl C)')
+                        continue
+            else:
+                print('\nNow I can tell you\'re just stress testing.')
+                continue
+    if time_filter_q == 'no':
+        month = None
+        day = None
+        print('\nOnward we go!')
+        print('-'*80)
+        return city, month, day
+
 
 def group_filter(data, month_name, day_name):
 
